@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Admin"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2023-09-27 11:45:24 AM"/>
+        <attribute name="created" value="QWRtaW47REVTS1RPUC1LNjBKRDJQOzIwMjMtMDktMjU7MTA6NDE6MzkgQU07Mjc5MQ=="/>
+        <attribute name="edited" value="QWRtaW47REVTS1RPUC1LNjBKRDJQOzIwMjMtMDktMjc7MTE6NDU6MjQgQU07NTsyOTA0"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="berat, taunskrg, harga, taunjual, selisih, harganaik, harganaik1, total, hargajual, hargatotal" type="Integer" array="False" size=""/>
+            <output expression="&quot;masukkan jumlah emas yang anda miliki (gram) : &quot;" newline="True"/>
+            <input variable="berat"/>
+            <output expression="&quot;Tahun saat ini : &quot;" newline="True"/>
+            <input variable="taunskrg"/>
+            <output expression="&quot;harga beli per gram tahun ini : &quot;" newline="True"/>
+            <input variable="harga"/>
+            <output expression="&quot;Tahun berapa anda ingin menjual emas anda?&quot;" newline="True"/>
+            <input variable="taunjual"/>
+            <if expression="taunjual &gt; taunskrg">
+                <then>
+                    <assign variable="hargatotal" expression="harga*berat"/>
+                    <assign variable="selisih" expression="taunjual-taunskrg"/>
+                    <assign variable="harganaik" expression="10/100*harga"/>
+                    <assign variable="harganaik1" expression="harganaik*berat"/>
+                    <assign variable="total" expression="harganaik1*selisih"/>
+                    <assign variable="hargajual" expression="hargatotal+total"/>
+                    <output expression="&quot;harga emas anda ditahun &quot; &amp; taunjual &amp; &quot; adalah&quot; &amp; hargajual" newline="True"/>
+                </then>
+                <else>
+                    <assign variable="hargatotal" expression="harga*berat"/>
+                    <output expression="&quot;harga emas anda ditahun &quot; &amp; taunskrg &amp;&quot;adalah&quot;&amp; hargatotal" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
